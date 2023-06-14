@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course List</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* CSS styles for the navbar */
+    .navbar {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+
+    .navbar h1 {
+      color: #fff;
+    }
+
+    /* CSS styles for the body */
+    body {
+      background-color: #f2f2f2;
+      margin: 0;
+      padding-top: 70px; /* Add top padding to the body to avoid content overlapping with the navbar */
+    }
+
+    .content {
+      text-align: left;
+      padding: 20px;
+    }
+
+    .departments {
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    .departments select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    .departments ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .departments li {
+      margin-bottom: 5px;
+    }
+
+    /* Custom background colors */
+    .container-fluid {
+      background-color: #fff;
+    }
+
+    .departments {
+      background-color: #e9e9e9;
+    }
+  </style>
+  <script>
+    function showElectives(course) {
+      var electives = {
+        'Course 1': ['Elective 1', 'Elective 2', 'Elective 3'],
+        'Course 2': ['Elective 4', 'Elective 5'],
+        'Course 3': ['Elective 6', 'Elective 7', 'Elective 8'],
+        'Course 4': ['Elective 9']
+      };
+
+      var electivesList = electives[course];
+      var electivesOutput = '';
+
+      if (electivesList) {
+        electivesOutput += '<ul>';
+        for (var i = 0; i < electivesList.length; i++) {
+          electivesOutput += '<li>' + electivesList[i] + '</li>';
+        }
+        electivesOutput += '</ul>';
+      } else {
+        electivesOutput = 'No electives found for the selected course.';
+      }
+
+      document.getElementById('electives').innerHTML = electivesOutput;
+    }
+
+    function showDepartmentElectives(department) {
+      var electives = {
+        'CSE': ['Elective 1', 'Elective 2', 'Elective 3'],
+        'ECE': ['Elective 4', 'Elective 5'],
+        'EEE': ['Elective 6', 'Elective 7', 'Elective 8'],
+        'Mech': ['Elective 9'],
+        'Civil': ['Elective 10', 'Elective 11']
+      };
+
+      var electivesList = electives[department];
+      var electivesOutput = '';
+
+      if (electivesList) {
+        electivesOutput += '<ul>';
+        for (var i = 0; i < electivesList.length; i++) {
+          electivesOutput += '<li>' + electivesList[i] + '</li>';
+        }
+        electivesOutput += '</ul>';
+      } else {
+        electivesOutput = 'No electives found for the selected department.';
+      }
+
+      document.getElementById('department-electives').innerHTML = electivesOutput;
+    }
+
+    function showPrerequisiteCourses(course) {
+      var prerequisites = {
+        'Course 1': ['Prerequisite 1', 'Prerequisite 2'],
+        'Course 2': ['Prerequisite 3'],
+        'Course 3': ['Prerequisite 4', 'Prerequisite 5', 'Prerequisite 6'],
+        'Course 4': ['Prerequisite 7', 'Prerequisite 8']
+      };
+
+      var prerequisitesList = prerequisites[course];
+      var prerequisitesOutput = '';
+
+      if (prerequisitesList) {
+        prerequisitesOutput += '<ul>';
+        for (var i = 0; i < prerequisitesList.length; i++) {
+          prerequisitesOutput += '<li>' + prerequisitesList[i] + '</li>';
+        }
+        prerequisitesOutput += '</ul>';
+      } else {
+        prerequisitesOutput = 'No prerequisites found for the selected course.';
+      }
+
+      document.getElementById('prerequisites').innerHTML = prerequisitesOutput;
+    }
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Course Prerequisites and Domain Catalog</h1>
+  </div>
+
+  <!-- Container -->
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <!-- Left Content -->
+      <div class="col-md-6">
+        <div class="content">
+          <h2>Select a course:</h2>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="#" onclick="showElectives('Course 1'); showPrerequisiteCourses('Course 1')">Course 1</a></li>
+            <li class="list-group-item"><a href="#" onclick="showElectives('Course 2'); showPrerequisiteCourses('Course 2')">Course 2</a></li>
+            <li class="list-group-item"><a href="#" onclick="showElectives('Course 3'); showPrerequisiteCourses('Course 3')">Course 3</a></li>
+            <li class="list-group-item"><a href="#" onclick="showElectives('Course 4'); showPrerequisiteCourses('Course 4')">Course 4</a></li>
+          </ul>
+          <div id="electives"></div>
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div class="col-md-6">
+        <div class="departments">
+          <h2>Select a department:</h2>
+          <select class="form-control" onchange="showDepartmentElectives(this.value)">
+            <option value="">Select Department</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="Mech">Mech</option>
+            <option value="Civil">Civil</option>
+          </select>
+          <div id="department-electives"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+      <!-- Right Content -->
+      
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

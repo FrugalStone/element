@@ -173,7 +173,8 @@ router.get("/changeElective", async (req, res) => {
     const enrolledCourses = await courseModel.find({ courseCode: { $in: enrolledCourseCodes }, dept: req.session.student_dept, sem: req.session.student_sem  });
     
     if (request) {
-
+        console.log("Request found");
+        console.log(request.status);
         res.render("students/changeElective.ejs", {
             enrolledCourses: enrolledCourses,
             unenrolledCourses: [],

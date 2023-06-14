@@ -65,6 +65,27 @@
     <script>
         function acceptRequest(mail) {
             console.log("accept request for mail "+ mail);
+            const requestOptions = {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: mail })
+            };
+
+            fetch('http://localhost:5002/admin/acceptChangeElective', requestOptions)
+            .then(response => {
+                if (response.ok) {
+                    console.log("Electives changed successfully");
+                    window.location.href = "/admin/changeElective";
+                } else {
+                    throw new Error("Failed to submit electives");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle any errors that occurred during the request
+            });
         }
 
         function rejectRequest(mail) {

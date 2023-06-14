@@ -248,10 +248,54 @@ router.get("/changeElective", async (req, res) => {
 
   const requests = await changeElectiveRequestModel.find();
 
+  const pendingRequests = await requests.filter((request) => request.status == "pending");
+
   res.render("admin/changeElec.ejs", {
-    changes: requests
+    changes: pendingRequests
   });
 })
+
+router.post("/acceptChangeElective", async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    const request = await changeElectiveRequestModel.findOne({ email: email });
+
+    const student = await StudentModel.findOne({ email: email });
+
+    const enrollments = await enrollmentModel.find({ dept: student.dept, sem: student.sem });
+
+    const enrollment = enrollments.filter((enrollment) => enrollment.students.includes(email))[0];
+
+    console.log("enrollment: ");
+    console.log(enrollment);
+
+    // remove student from enrollment
+    enrollment.students = enrollment.students.filter((student) => student != email);
+    await enrollment.save();
+
+    console.log(request);
+
+    // add student to enrollment of new course
+    const newEnrollment = enrollments.filter((e) => e.courseCode == request.courseCode)[0];
+    newEnrollment.students.push(email);
+    await newEnrollment.save();
+
+    // change request status to accepted
+    request.status = "accepted";
+    await request.save();
+
+    console.log("old enrollment: ");
+    console.log(enrollment);
+    console.log("new enrollment: ");
+    console.log(newEnrollment);
+
+    res.redirect("/admin/changeElective");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An error occurred");
+  }
+});
 
 router.post("/logout", (req, res) => {
   req.session.destroy((err) => {
