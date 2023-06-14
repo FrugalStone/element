@@ -11,7 +11,7 @@ describe('Testing the EJS template', function() {
   before(function() {
     const ejsFilePath = path.join(__dirname, '../views/students/dashboard.ejs');
     template = fs.readFileSync(ejsFilePath, 'utf-8');
-    compiledTemplate = ejs.compile(template);
+    let compiledTemplate = ejs.compile(template);
   });
 
   it('should render without errors', function() {

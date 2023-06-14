@@ -73,9 +73,10 @@
 
       if (electivesList) {
         electivesOutput += '<ul>';
-        for (var i = 0; i < electivesList.length; i++) {
-          electivesOutput += '<li>' + electivesList[i] + '</li>';
-        }
+          for (const elective of electivesList) {
+            electivesOutput += '<li>' + elective + '</li>';
+          }
+
         electivesOutput += '</ul>';
       } else {
         electivesOutput = 'No electives found for the selected course.';
@@ -98,9 +99,10 @@
 
       if (electivesList) {
         electivesOutput += '<ul>';
-        for (var i = 0; i < electivesList.length; i++) {
-          electivesOutput += '<li>' + electivesList[i] + '</li>';
+        for (const elective of electivesList) {
+          electivesOutput += '<li>' + elective + '</li>';
         }
+
         electivesOutput += '</ul>';
       } else {
         electivesOutput = 'No electives found for the selected department.';
@@ -122,9 +124,10 @@
 
       if (prerequisitesList) {
         prerequisitesOutput += '<ul>';
-        for (var i = 0; i < prerequisitesList.length; i++) {
-          prerequisitesOutput += '<li>' + prerequisitesList[i] + '</li>';
+        for (const prerequisite of prerequisitesList) {
+          prerequisitesOutput += `<li>${prerequisite}</li>`;
         }
+
         prerequisitesOutput += '</ul>';
       } else {
         prerequisitesOutput = 'No prerequisites found for the selected course.';
