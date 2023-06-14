@@ -48,10 +48,10 @@ router.get("/dashboard", async (req, res) => {
     const announcements = await announcementModel.find();
     console.log(announcements[0].announcement);
 
-    var regis = await openRegistrationModel.find();
-    var modifiedObjects = [];
+    let regis = await openRegistrationModel.find();
+    let modifiedObjects = [];
     regis.forEach((obj) => {
-      var modifiedObj = {
+      let modifiedObj = {
         _id: obj._id,
         dept: obj.dept,
         sem: obj.sem,
@@ -117,12 +117,12 @@ router.get("/allocation", async (req, res) => {
   if( req.session.isAdmin ){
     console.log("Serving allocation page");
 
-    var enrollments = await enrollmentModel.find();
+    let enrollments = await enrollmentModel.find();
 
-    var regis = await openRegistrationModel.find();
-    var modifiedObjects = [];
+    let regis = await openRegistrationModel.find();
+    let modifiedObjects = [];
     regis.forEach((obj) => {
-      var modifiedObj = {
+      let modifiedObj = {
         _id: obj._id,
         dept: obj.dept,
         sem: obj.sem,
@@ -152,13 +152,13 @@ router.post("/runAllocationAlgo", async (req, res) => {
     console.log("Running allocation algo");
 
     const { dept, sem } = req.body;
-    // const dept = req.query.dept;
-    // const sem = parseInt(req.query.sem);
+
     console.log("allocation process for dept = " + dept + " sem = " + sem);
+
 
     const courses = await courseModel.find({ dept: dept, sem: sem });
 
-    var enrollments = courses.map((course) => ({
+    let enrollments = courses.map((course) => ({
       courseCode: course.courseCode,
       dept: dept,
       sem: sem,
@@ -169,20 +169,19 @@ router.post("/runAllocationAlgo", async (req, res) => {
     console.log("Enrollments: ");
     console.log(enrollments);
 
-    var prioritySubmissions = await prioritySubmissionModel.find({ dept: dept, sem: sem });
+    let prioritySubmissions = await prioritySubmissionModel.find({ dept: dept, sem: sem });
     prioritySubmissions.sort((a, b) => a.createdAt - b.createdAt);
 
     prioritySubmissions.forEach((submission) => { 
-      priorities = submission.priorities.map((p) => parseInt(p));
+      let priorities = submission.priorities.map((p) => parseInt(p));
       let selecCourses = submission.courses.map((c) => c);
 
-      var coursePriorityPairs = selecCourses.map((course, index) => ({ course: course, priority: priorities[index] }));
+      let coursePriorityPairs = selecCourses.map((course, index) => ({ course: course, priority: priorities[index] }));
       coursePriorityPairs.sort((a, b) => a.priority - b.priority);
 
 
-      for (var i = 0; i < coursePriorityPairs.length; i++) {
-        var pair = coursePriorityPairs[i];
-        var course = enrollments.find((enroll) => enroll.courseCode == pair.course);
+      for (let pair of coursePriorityPairs) {
+        let course = enrollments.find((enroll) => enroll.courseCode === pair.course);
       
         if (course) {
           if (course.students.length < course.seats) {
@@ -190,7 +189,7 @@ router.post("/runAllocationAlgo", async (req, res) => {
             break;
           }
         }
-      }
+      }      
     });
 
     console.log("Enrollments: ");
