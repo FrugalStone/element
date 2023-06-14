@@ -1,0 +1,425 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Elective</title>
+
+
+
+    <link rel="stylesheet" href="styles/elem.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        referrerpolicy="no-referrer" />
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+    
+    <script src="https://unpkg.com/mustache@latest"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="scripts/idlelogout.js"></script> -->
+
+</head>
+
+<style>
+    body {
+        background-image: url('http://localhost:5002/images/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    select {
+        background-color: rgb(96, 96, 96);
+    }
+
+    .font-light {
+        font-weight: 100;
+        text-decoration: line-through
+    }
+</style>
+
+<body>
+    <%- include('../utils/nav-bars/studentNavBar.ejs', { active: 'select-elective' }) %>
+
+    <% if (isRegisOpen) { %>
+
+        <div class="con-row">
+            <div class="con-card card1">
+                <h2 class="m-t-10px">Select Electives</h2>
+
+                <div class="filter-flex">
+                    <div class="filter-card">
+                        <div class="filter-card-content">
+                            <div>Type of course</div>
+                            <div class="checkboxes">
+                                <label>
+                                    <div class="check-box">
+                                        <input class="form-check-input" type="checkbox" value="" id="type-lab" checked>
+                                        <div class="check-desc">Lab</div>
+                                    </div>
+                                </label>
+                                <label>
+                                    <div class="check-box">
+                                        <input class="form-check-input" type="checkbox" value="" id="type-project" checked>
+                                        <div class="check-desc">Project</div>
+                                    </div>
+                                </label>
+                                <label>
+                                    <div class="check-box">
+                                        <input class="form-check-input" type="checkbox" value="" id="type-theory" checked>
+                                        <div class="check-desc">Theory</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-card">
+                        <div class="filter-card-content">
+                            <div>Credits</div>
+                            <div class="checkboxes">
+                                <label>
+                                    <div class="check-box">
+                                        <input class="form-check-input" type="checkbox" value="" id="cr-1" checked>
+                                        <div class="check-desc">1</div>
+                                    </div>
+                                </label>
+                                <label>
+                                    <div class="check-box">
+                                        <input class="form-check-input" type="checkbox" value="" id="cr-2" checked>
+                                        <div class="check-desc">2</div>
+                                    </div>
+                                </label>
+                                <label>
+                                    <div class="check-box">
+                                        <input class="form-check-input" type="checkbox" value="" id="cr-3" checked>
+                                        <div class="check-desc">3</div>
+                                    </div>
+                                </label>
+                                <label>
+                                    <div class="check-box">
+                                        <input class="form-check-input" type="checkbox" value="" id="cr-4" checked>
+                                        <div class="check-desc">4</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn" id="filterButton">Filter</button>
+                </div>
+
+                <div class="accordion m-5pr" id="accordionExample">
+
+                    <div class="card m-b-15px">
+                        <div class="card-header myCard">
+                            <div class="main-tile-flex">
+                                <div class="tile-con-flex">
+                                    <input class="form-check-input" style="margin: 0; margin-right: 20px;" type="checkbox"
+                                        value="" id="CSE311">
+                                    <p class="m-0">CSE311:</p>
+                                </div>
+                                <div class="empty" id="headingOne" data-toggle="collapse" data-target="#c1"
+                                    aria-expanded="false" aria-controls="c1" style="background-color: rgb(96, 96, 96); color: white;">
+                                    Computer Security</div>
+                                <button class="btn bg-red collapsed" type="button" data-toggle="collapse" data-target="#c1"
+                                    aria-expanded="false" aria-controls="c1">
+                                    <i class="fa fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div id="c1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="hidden-content card-body">
+                                <div class="hidden-content-row-1">
+                                    <p class="m-0"> <span class="badge alert-info">Lab-Based
+                                            Course</span></p>
+                                    <p class="m-0">Credits: <span class="badge alert-danger">4</span></p>
+                                </div>
+                                <h5 class="bold">Overview:</h5>
+                                <p class="small">
+                                    It provides an overview of the field of security and assurance
+                                    emphasizing the need to
+                                    protect information
+                                    being transmitted electronically
+                                </p>
+                                <h5 class="bold">Pre-Requisites:</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem,
+                                    iure.</p>
+                                <h5 class="bold">Course outcomes:</h5>
+                                <ul class="small m-5pr">
+                                    <li>CO1: Understand the fundamental concepts of computer
+                                        security and apply to different
+                                        components of computing systems</li>
+                                    <li>CO2: Understand basic cryptographic techniques. </li>
+                                    <li>CO3: Understand how malicious attacks, threats, security and
+                                        protocol
+                                        vulnerabilities impact a system's Infrastructure.</li>
+                                    <li>CO4: Demonstrate knowledge in terms of relevance and
+                                        potential of computer security
+                                        for a given application.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="proceedPlacement">
+                    <button type="button" class="btn proceedBtn" id="proceed">Proceed</button>
+                </div>
+            </div>
+            <div class="con-card card2">
+                <h2 class="m-t-10px">Selected Electives</h2>
+                <div id="selectedElectives" class="card2-con">
+                    
+                </div>
+
+                <div class="submitPlacement">
+                    <button type="button" class="btn submitBtn" id="submit">submit</button>
+                </div>
+            </div>
+        </div>
+
+    <% } else { %>
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #f1f1f1; padding: 20px;">
+            <p style="text-align: center;"><%= denyMsg %></p>
+          </div>
+    <% } %>
+
+    <script id="electiveTile" type="text/x-handlebars-template">
+        <div class="card m-b-15px">
+            <div class="card-header myCard">
+                <div class="main-tile-flex">
+                    <div class="tile-con-flex">
+                        <input class="form-check-input" style="margin: 0; margin-right: 20px;" type="checkbox" value="{{ courseCode }}" name="course"
+                            id="{{ courseCode }}">
+                        <p class="m-0">{{ courseCode }}:</p>
+                    </div>
+                    <div class="empty" id="headingOne" data-toggle="collapse" data-target="#{{ target }}" aria-expanded="false"
+                        aria-controls="{{ target }}">{{ courseName }}</div>
+                    <button class="btn bg-red collapsed" type="button" data-toggle="collapse" data-target="#{{ target }}"
+                        aria-expanded="false" aria-controls="{{ target }}">
+                        <i class="fa fa-angle-down"></i>
+                </div>
+            </div>
+            <div id="{{ target }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="hidden-content card-body">
+                    <div class="hidden-content-row-1">
+                        <p class="m-0"> <span class="badge alert-info">{{ courseType }}-Based Course</span></p>electiveTile
+                        <p class="m-0">Credits: <span class="badge alert-danger">{{ courseCredits }}</span></p>
+                    </div>
+                    <h5 class="bold">Overview:</h5>
+                    <p class="small">
+                        {{ courseOverview }}
+                    </p>
+                    <h5>Seats available: {{ seats }}</h5>
+                    <h5 class="bold">Pre-Requisites:</h5>
+                    <p>
+                      {{#satisfiedPrerequisites}}
+                        {{.}}{{#isLast}}{{else}}, {{/isLast}}
+                      {{/satisfiedPrerequisites}}
+                    </p>
+                    {{#unsatisfiedPrerequisites.length}}
+                        <p class="not-prereq">
+                        {{#unsatisfiedPrerequisites}}
+                            {{.}}{{#isLast}}{{else}}, {{/isLast}}
+                        {{/unsatisfiedPrerequisites}}
+                        </p>
+                    {{/unsatisfiedPrerequisites.length}}
+                    <h5 class="bold">Course outcomes:</h5>
+                    <ul class="small m-5pr">
+                      {{#courseOutcomes}}
+                        <li>{{.}}</li>
+                      {{/courseOutcomes}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="selectTile" type="text/x-handlebars-template">
+        <div class="card m-b-15px">
+            <div class="card-header myCard">
+                <div class="card2-con-flex">
+                    <div class="card2-title">
+                        <p class="m-r-5"> {{ courseCode }}:   </p>
+                        <div id="headingOne">{{ courseName }}</div>
+                    </div>
+                    <select class="form-control" id="{{ target }}" style="background-color: rgb(96, 96, 96); color: white;">
+                        {{#options}}
+                            <option value="{{.}}">{{.}}</option>
+                        {{/options}}
+                    </select>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".mobile-nav i").click(function () {
+                $(".menu").toggleClass('mobile-menu');
+            });
+        })
+
+        var courses = JSON.parse('<%- JSON.stringify(courses) %>');
+        const coursesCompleted = JSON.parse('<%- JSON.stringify(courseCompleted) %>');   
+        const numElectives = JSON.parse('<%- numElectives %>');
+        const options = Array.from({ length: numElectives }, (_, index) => index + 1);
+        console.log(numElectives);
+
+        var filteredCourses = [];   
+        var selectedCourses = [];
+
+        const filterButton = document.getElementById('filterButton');
+        const proceedButton = document.getElementById("proceed");
+        const sbumitButton = document.getElementById("submit");
+
+        proceedButton.addEventListener("click", proceed);
+        filterButton.addEventListener('click', filter);
+        sbumitButton.addEventListener('click', submit);
+        filter();
+
+        function filter() {
+            console.log("Courses completed by the student: ");
+            console.log(coursesCompleted);
+            const lab = document.getElementById('type-lab').checked;
+            const project = document.getElementById('type-project').checked;
+            const theory = document.getElementById('type-theory').checked;
+            const cr1 = document.getElementById('cr-1').checked;
+            const cr2 = document.getElementById('cr-2').checked;
+            const cr3 = document.getElementById('cr-3').checked;
+            const cr4 = document.getElementById('cr-4').checked;
+            const creditsList = [cr1, cr2, cr3, cr4];
+            const typeLists = {
+                "Lab": lab,
+                "Project": project,
+                "Theory": theory
+            };
+
+            function satisfies(type, credits) {
+                return typeLists[type] && creditsList[credits - 1];
+            }
+
+            const targetElement = document.getElementById('accordionExample');
+            targetElement.innerHTML = '';
+
+            filteredCourses = [];
+            for (let i = 0; i < courses.length; i++) {
+                const course = courses[i];
+                if (satisfies(course.courseType, course.courseCredits)) {
+                    var data = course;
+                    data["target"] = "c"+(i+1).toString();
+                    data["satisfiedPrerequisites"] = course.coursePreRequisites.filter(prerequisite => coursesCompleted.includes(prerequisite));
+                    data["unsatisfiedPrerequisites"] = course.coursePreRequisites.filter(prerequisite => !coursesCompleted.includes(prerequisite));
+                    filteredCourses.push(data);
+                    var template = $('#electiveTile').html();
+                    var result = Mustache.render(template, data);
+                    targetElement.innerHTML += result;
+                }
+            }
+        }
+
+        function proceed(){
+            console.log("proceed");
+            selectedCourses = [];
+            var selectedOptions = $('input[name="course"]:checked');
+            if (selectedOptions.length != 3) {
+                alert("Please select exactly 3 couses");
+                return;
+            }
+
+            selectedOptions.each(function (index) {
+                var option = $(this).val();
+                console.log(option);
+                selectedCourses.push(
+                    filteredCourses.find(function(obj) {
+                        return obj.courseCode === option.toString();
+                    })
+                );
+            });
+
+            console.log(selectedCourses);
+            console.log("Courses completed by the student: ");
+            console.log(coursesCompleted);
+
+            var targetElement = document.getElementById('selectedElectives');
+
+            targetElement.innerHTML = '';
+
+            for( let i=0; i < selectedCourses.length; i++ ){
+                const course = selectedCourses[i];
+                console.log("checking prerequisites: ");
+                console.log(course.coursePreRequisites);
+                if( course.coursePreRequisites.every(element => coursesCompleted.includes(element)) ){
+                    var data = course;
+                    data["target"] = "p"+(i+1).toString();
+                    data["options"] = options;
+                    var template = $('#selectTile').html();
+                    var result = Mustache.render(template, course);
+                    targetElement.innerHTML += result;
+                }
+                else{
+                    alert("You have not completed the prerequisites for "+course.courseCode);
+                    return;
+                }
+            }
+        }
+
+        function submit(){
+            if( selectedCourses.length != numElectives ){
+                alert("Please select exactly ${numElectives} couses");
+                return;
+            }
+
+            var selectedPriorities = [];
+            var onlyPriority = [];
+
+            for( let i=0; i < selectedCourses.length; i++ ){
+                const course = selectedCourses[i];
+                var priority = document.getElementById("p"+(i+1).toString()).value;
+                selectedPriorities.push( { "courseCode": course.courseCode, "priority": priority } );
+                onlyPriority.push( priority );
+            }
+
+            if( !(new Set(onlyPriority).size === onlyPriority.length) ){
+                alert("Please select priorities properly");
+                return;
+            }
+
+            console.log(selectedPriorities);
+
+            // make a api call to submit the selected courses with priorities
+            fetch("/student/submitPriorities", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(selectedPriorities),
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Electives submitted successfully");
+                    window.location.href = "/student/dashboard";
+                } else {
+                    throw new Error("Failed to submit electives");
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                alert(error.message);
+            });
+
+        }
+
+    </script>
+</body>

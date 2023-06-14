@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mine</title>
+</head>
+<body>
+    <p>Text here: </p>
+    <p id="here"></p>
+    <button id="hi">say hi</button>
+    <button id="bye">say bye</button>
+</body>
+
+<script>
+document.getElementById("hi").onclick = function() {
+    async function hiApi() {
+        let response = await fetch("http://localhost:5002/say-hi");
+        let data = await response.json();
+        return data;
+    }
+
+    hiApi().then(data => {
+        document.getElementById("here").textContent = data['text'];
+    } );
+
+}
+
+document.getElementById("bye").onclick = function() {
+    async function byeApi() {
+        let response = await fetch("http://localhost:5002/say-bye");
+        let data = await response.json();
+        return data;
+    }
+    byeApi().then(data => {
+        document.getElementById("here").textContent = data['text'];
+    } );
+
+}
+
+</script>
+
+</html>

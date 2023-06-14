@@ -1,0 +1,302 @@
+[
+  {
+    "email": "mailvizzard@gmail.com",
+    "priorities": [
+      "2",
+      "3",
+      "1"
+    ],
+    "courses": [
+      "CSE102",
+      "CSE103",
+      "CSE104"
+    ],
+    "dept": "CSE",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657534800000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657635600000"
+      }
+    },
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "email": "johndoe@example.com",
+    "priorities": [
+      "1",
+      "2",
+      "3"
+    ],
+    "courses": [
+      "CSE101",
+      "CSE102",
+      "CSE103"
+    ],
+    "dept": "CSE",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657538400000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657642800000"
+      }
+    },
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "email": "janesmith@example.com",
+    "priorities": [
+      "3",
+      "1",
+      "2"
+    ],
+    "courses": [
+      "CSE104",
+      "CSE101",
+      "CSE103"
+    ],
+    "dept": "CSE",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657542000000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657646400000"
+      }
+    },
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "email": "emmawilson@example.com",
+    "priorities": [
+      "2",
+      "3",
+      "1"
+    ],
+    "courses": [
+      "CSE102",
+      "CSE103",
+      "CSE104"
+    ],
+    "dept": "CSE",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657545600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657649974000"
+      }
+    },
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "email": "adambrown@example.com",
+    "priorities": [
+      "1",
+      "2",
+      "3"
+    ],
+    "courses": [
+      "CSE101",
+      "CSE102",
+      "CSE103"
+    ],
+    "dept": "CSE",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657549200000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657653482000"
+      }
+    },
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "email": "oliviadavis@example.com",
+    "priorities": [
+      "3",
+      "1",
+      "2"
+    ],
+    "courses": [
+      "CSE104",
+      "CSE101",
+      "CSE103"
+    ],
+    "dept": "CSE",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657552800000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657656978000"
+      }
+    },
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "email": "noahwilson@example.com",
+    "priorities": [
+      "2",
+      "3",
+      "1"
+    ],
+    "courses": [
+      "CSE102",
+      "CSE103",
+      "CSE104"
+    ],
+    "dept": "CSE",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657556400000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657660473000"
+      }
+    },
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "email": "sophiathomas@example.com",
+    "priorities": [
+      "1",
+      "2",
+      "3"
+    ],
+    "courses": [
+      "CSE101",
+      "CSE102",
+      "CSE103"
+    ],
+    "dept": "CSE",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657560000000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657663970000"
+      }
+    },
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "email": "liamanderson@example.com",
+    "priorities": [
+      "3",
+      "1",
+      "2"
+    ],
+    "courses": [
+      "CSE104",
+      "CSE101",
+      "CSE103"
+    ],
+    "dept": "CSE",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657563600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657667461000"
+      }
+    },
+    "__v": {
+      "$numberInt": "0"
+    }
+  },
+  {
+    "email": "avawalker@example.com",
+    "priorities": [
+      "2",
+      "3",
+      "1"
+    ],
+    "courses": [
+      "CSE102",
+      "CSE103",
+      "CSE104"
+    ],
+    "dept": "CSE",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1657567200000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1657670968000"
+      }
+    },
+    "__v": {
+      "$numberInt": "0"
+    }
+  }
+]

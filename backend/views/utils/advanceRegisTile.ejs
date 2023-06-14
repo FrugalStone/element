@@ -1,0 +1,23 @@
+<li class="list-group-item list-item" style="background-color: rgb(96, 96, 96); color: white; border: 1px solid rgb(96, 96, 96)">
+    
+    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-around;">
+        <div>
+          <p>Department: <span class="badge alert-info">
+            <%= dept %>
+          </span>
+          Semester: <span class="badge alert-success">
+            <%= sem %>
+          </span>
+          </p>
+          <p>
+            Open from <span class="badge alert-warning">
+              <%= startDate %>
+            </span> - <span class="badge alert-danger">
+              <%= endDate %>
+            </span>
+          </p>
+        </div>
+        <button type="button" class="btn red-back" id="filterButton" style="align-self: center; background-color: #ff4a44;" onclick="startAllocationAlgo('<%= dept %>', '<%= sem %>')" >
+            Allocate</button>
+      </div>      
+</li>

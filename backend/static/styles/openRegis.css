@@ -1,0 +1,60 @@
+#center-flex {
+	display: flex;
+  flex-direction: column;
+  height: 85vh; /* Set a height for the container */
+}
+
+.con-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%; /* Occupy the full height of the container */
+}
+
+.con-card {
+  height: 60vh;
+  margin: 12px 10px;
+  background-color: rgba(20, 36, 64, 0.7);
+  border-radius: 10px;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card1 {
+  width: 40%;
+  overflow: hidden;
+  overflow-y: scroll;
+	padding: 10px 0;
+}
+
+.card2 {
+  width: 60%;
+	padding: 10px 15%;
+}
+
+.list-content {
+	width: 80%;
+	margin: auto;
+	color: black;
+}
+
+.form-title {
+	margin: 0;
+	margin-top: 15px;
+}
+
+#align-left {
+	text-align: left;
+}
+
+.black-text {
+	color: black;
+}
+
+.openBtn {
+	background-color: lightskyblue;
+  color: black;
+	margin-top: 20px;
+}

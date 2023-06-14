@@ -1,0 +1,139 @@
+[
+  {
+    "username": "Vinayak",
+    "email": "mailvizzard@gmail.com",
+    "password": "vizz@5002",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "dept": "CSE",
+    "coursesCompleted": [
+      "MAT101",
+      "CSE201",
+      "CSE202"
+    ]
+  },
+  {
+    "username": "JohnDoe",
+    "email": "johndoe@example.com",
+    "password": "John@123",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "dept": "CSE",
+    "coursesCompleted": [
+      "MAT101",
+      "CSE202"
+    ]
+  },
+  {
+    "username": "JaneSmith",
+    "email": "janesmith@example.com",
+    "password": "Jane@456",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "dept": "CSE",
+    "coursesCompleted": [
+      "MAT202",
+      "CSE201",
+      "CSE202"
+    ]
+  },
+  {
+    "username": "EmmaWilson",
+    "email": "emmawilson@example.com",
+    "password": "Emma@789",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "dept": "CSE",
+    "coursesCompleted": [
+      "MAT101",
+      "CSE201",
+      "CSE202"
+    ]
+  },
+  {
+    "username": "AdamBrown",
+    "email": "adambrown@example.com",
+    "password": "Adam@012",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "dept": "CSE",
+    "coursesCompleted": [
+      "MAT101",
+      "CSE202"
+    ]
+  },
+  {
+    "username": "OliviaDavis",
+    "email": "oliviadavis@example.com",
+    "password": "Olivia@345",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "dept": "CSE",
+    "coursesCompleted": [
+      "MAT202",
+      "CSE201",
+      "CSE202"
+    ]
+  },
+  {
+    "username": "NoahWilson",
+    "email": "noahwilson@example.com",
+    "password": "Noah@678",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "dept": "CSE",
+    "coursesCompleted": [
+      "MAT101",
+      "CSE201",
+      "CSE202"
+    ]
+  },
+  {
+    "username": "SophiaThomas",
+    "email": "sophiathomas@example.com",
+    "password": "Sophia@901",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "dept": "CSE",
+    "coursesCompleted": [
+      "MAT101",
+      "CSE202"
+    ]
+  },
+  {
+    "username": "LiamAnderson",
+    "email": "liamanderson@example.com",
+    "password": "Liam@234",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "dept": "CSE",
+    "coursesCompleted": [
+      "MAT202",
+      "CSE201",
+      "CSE202"
+    ]
+  },
+  {
+    "username": "AvaWalker",
+    "email": "avawalker@example.com",
+    "password": "Ava@567",
+    "sem": {
+      "$numberInt": "6"
+    },
+    "dept": "CSE",
+    "coursesCompleted": [
+      "MAT101",
+      "CSE201",
+      "CSE202"
+    ]
+  }
+]

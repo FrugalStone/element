@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <script src="scripts/onUnload.js"></script>
+  <!-- <script src="scripts/idlelogout.js"></script> -->
+
+  <link rel="stylesheet" href="/styles/navBar.css">
+  <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+
+<style>
+  body {
+    background-image: url('http://localhost:5002/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<body>
+
+  <%- include('../utils/nav-bars/studentNavBar.ejs', { active: 'home' }) %>
+
+    <main class="container my-4">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-3" style="background-color: rgb(96, 96, 96); color: white;">
+            <div class="card-body d-flex align-items-center">
+              <i class="fas fa-book fa-3x me-3"></i>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-3" style="background-color: rgb(96, 96, 96); color: white;">
+            <div class="card-body d-flex align-items-center justify-content-between">
+              <h2 class="card-title">Graph</h2>
+              <a href="#" class="btn btn-primary"><i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-3" style="background-color: rgb(96, 96, 96); color: white;">
+            <div class="card-body d-flex align-items-center justify-content-end">
+              <i class="fas fa-cog fa-3x"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="con-row">
+      <div class="con-card card1">
+        <h4>Open Registrations</h4>
+        <div class="list-content" style="background-color: rgb(96, 96, 96); color: white;">
+          <ul class="list-group">
+            <% for (let i=0; i < regis.length; i++) { %>
+              <%- include('../utils/regisTile.ejs', { dept: regis[i].dept, sem: regis[i].sem, startDate: regis[i].startDate, endDate: regis[i].endDate }) %>
+            <% } %>
+            <li class="list-group-item list-item" style="background-color: rgb(96, 96, 96); color: white;">
+              <p>Department: <span class="badge alert-info">CSE</span>
+                Semester: <span class="badge alert-success">IV</span><br>
+                Open from <span class="badge alert-warning">25-jan-2023</span> - <span
+                  class="badge alert-danger">30-may-2023</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="con-card card2">
+        <h4>Announcements</h4>
+        <br>
+        <div id="announcements">
+          <% for (let i=0; i < announcements.length; i++) { %>
+            <%- include('../utils/announcementTile.ejs', { text: announcements[i].announcement }) %>
+          <% } %>
+          <div class="alert announce-tile" role="alert">
+            This is a danger alert—check it out!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

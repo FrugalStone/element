@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Page</title>
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/login.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="login-logo-container">
+          <img class="login-option" src="images/study.png" alt="Study Logo" onclick="selectLogo('/login')" />
+          <img class="login-option" src="images/setting.png" alt="Settings Logo" onclick="selectLogo('/admin/login')" />
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="login-card">
+          <form id="login-form" class="login-form" onsubmit="return validateForm()" method="POST">
+            <h3>Login</h3>
+            <div id="warning" class="alert alert-warning" role="alert">
+              <%= warnignMessage %>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-group mb-3">
+                <input name="password" type="password" class="form-control" id="password" placeholder="Password" />
+              </div>
+            </div>
+            <input type="hidden" id="selectedLogo" name="selectedLogo" />
+            <div class="buttons">
+              <button type="submit" class="btn btn-primary" style="background-color: #203963; border-color: #203963;">Login</button>
+              <a href="/forgotPassword">Forgot password</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- Bootstrap 5 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script>
+  const element = document.getElementById('warning');
+  const warnedFlag = "<%=isWarned%>" === "true";
+
+  if (warnedFlag) {
+    element.style.display = 'block';
+    console.log("displaying warning");
+  } else {
+    console.log("removed warning");
+    element.style.display = 'none';
+  }
+
+  function selectLogo(dashboardUrl) {
+    document.getElementById("selectedLogo").value = dashboardUrl;
+    const loginOptions = document.querySelectorAll(".login-option");
+    loginOptions.forEach((opt) => opt.classList.remove("active"));
+    event.target.classList.add("active");
+  }
+
+  const togglePasswordBtn = document.querySelector("#toggle-password");
+  const passwordField = document.querySelector("#password");
+
+  togglePasswordBtn.addEventListener("click", function () {
+    const type =
+      passwordField.getAttribute("type") === "password"
+        ? "text"
+        : "password";
+    passwordField.setAttribute("type", type);
+    this.querySelector("i").classList.toggle("bi-eye");
+    this.querySelector("i").classList.toggle("bi-eye-slash");
+  });
+
+  function validateForm() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const selectedLogo = document.getElementById("selectedLogo").value;
+    if (email === "" || password === "") {
+      alert("Please select a logo and fill in all fields");
+      return false;
+    }
+    if(selectedLogo === ""){
+      alert("Please select a role to login");
+      return false;
+    }
+    // Submit theform and redirect to the selected dashboard URL
+    const form = document.getElementById("login-form");
+    form.action = selectedLogo;
+    return true;
+  }
+</script>
+
+</html>

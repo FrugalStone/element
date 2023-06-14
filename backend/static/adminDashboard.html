@@ -1,0 +1,131 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation bar</title>
+
+    <link rel="stylesheet" href="./home.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="head-area">
+        <div class="header-container">
+            <div class="logo">
+                <h1 style="margin: 0;"><span>Ele</span>Ment</h1>
+                <span style="font-size: 10px;">ADMIN</span>
+            </div>
+            <div class="mobile-nav">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="menu1" style="margin: 0 0; padding: 0;">
+                <li><a href="#" class="">Home</a></li>
+                <li><a href="#" class="active">View Student</a></li>
+                <li><a href="#" class="">Add Student</a></li>
+                <li><a href="#" class="">Blog</a></li>
+                <li><a href="#" class="">Services</a></li>
+                <li><a href=""><button id="logout-btn">LogOut</button></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="con-row">
+        <div class="con-card card1">
+            <h4>Make and announcement</h4>
+            <br>
+            <textarea name="desc" id="desc" cols="45" rows="6" placeholder="Announcement!"
+                style="color: rgb(0, 0, 0); resize: none;"></textarea>
+            <br>
+            <button class="btn" style="background-color: #ff4a44; margin-top: 15px;">Announce</button>
+        </div>
+        <div class="con-card card2">
+            <h4>Announcements</h4>
+            <br>
+            <div id="announcements">
+                <div class="alert announce-tile" role="alert">
+                    This is a danger alert—check it out!
+                </div>
+                <div class="alert announce-tile" role="alert">
+                    This is a danger alert—check it out!
+                </div>
+                <div class="alert announce-tile" role="alert">
+                    This is a danger alert—check it out!
+                </div>
+                <div class="alert announce-tile" role="alert">
+                    This is a danger alert—check it out!
+                </div>
+                <div class="alert announce-tile" role="alert">
+                    This is a danger alert—check it out!
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="con-row">
+        <div class="con-card card3">
+            <h4>Open Registrations</h4>
+            <div class="list-content">
+                <ul class="list-group">
+                    <li class="list-group-item list-item">
+                        <p>Department: <span class="badge alert-info">CSE</span>
+                            Semester: <span class="badge alert-success">IV</span><br>
+                            Open from <span class="badge alert-warning">25-jan-2023</span> - <span class="badge alert-danger">30-may-2023</span> 
+                        </p>                 
+                    </li>
+                    <li class="list-group-item list-item">
+                        <p>Department: <span class="badge alert-info">CSE</span>
+                            Semester: <span class="badge alert-success">IV</span><br>
+                            Open from <span class="badge alert-warning">25-jan-2023</span> - <span class="badge alert-danger">30-may-2023</span> 
+                        </p>                 
+                    </li>
+                    <li class="list-group-item list-item">
+                        <p>Department: <span class="badge alert-info">CSE</span>
+                            Semester: <span class="badge alert-success">IV</span><br>
+                            Open from <span class="badge alert-warning">25-jan-2023</span> - <span class="badge alert-danger">30-may-2023</span> 
+                        </p>                 
+                    </li>
+                    <li class="list-group-item list-item">
+                        <p>Department: <span class="badge alert-info">CSE</span>
+                            Semester: <span class="badge alert-success">IV</span><br>
+                            Open from <span class="badge alert-warning">25-jan-2023</span> - <span class="badge alert-danger">30-may-2023</span> 
+                        </p>                 
+                    </li>
+                    <li class="list-group-item list-item">
+                        <p>Department: <span class="badge alert-info">CSE</span>
+                            Semester: <span class="badge alert-success">IV</span><br>
+                            Open from <span class="badge alert-warning">25-jan-2023</span> - <span class="badge alert-danger">30-may-2023</span> 
+                        </p>                 
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="con-card card4">
+            <h4>Change of electives</h4>
+            <div class="list-content">
+                <ul class="list-group">
+                    <li class="list-group-item list-item">
+                        Nothing here yet
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".mobile-nav i").click(function () {
+                $(".menu").toggleClass('mobile-menu');
+            });
+        })
+    </script>
+</body>

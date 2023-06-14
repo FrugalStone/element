@@ -1,0 +1,20 @@
+<header class="head-area">
+    <div class="header-container">
+        <div class="logo">
+            <h1 style="margin: 0;"><span>Ele</span>Ment</h1>
+            <span style="font-size: 10px;">STUDENT</span>
+        </div>
+        <div class="mobile-nav">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="menu1" style="margin: 0 0; padding: 0;">
+            <li><a href="/student/dashboard" class="<% if( active == 'home'){%>active<%} else {%> <%}%>">Home</a></li>
+            <li><a href="/student/selectElective" class="<% if( active == 'select-elective'){%>active<%} else {%> <%}%>">Select Elective</a></li>
+            <li><a href="/student/changeElective" class="<% if( active == 'change-elective'){%>active<%} else {%> <%}%>">Change Elective</a></li>
+
+            <li>
+                <form action="/logout" method="POST"><button id="logout-btn">LogOut</button></form>
+            </li>
+        </ul>
+    </div>
+</header>

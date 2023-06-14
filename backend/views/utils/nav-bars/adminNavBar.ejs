@@ -1,0 +1,20 @@
+<header class="head-area">
+    <div class="header-container">
+        <div class="logo">
+            <h1 style="margin: 0;"><span>Ele</span>Ment</h1>
+            <span style="font-size: 10px;">ADMIN</span>
+        </div>
+        <div class="mobile-nav">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="menu1" style="margin: 0 0; padding: 0;">
+            <li><a href="/admin/dashboard" class="<% if( active == 'home'){%>active<%} else {%> <%}%>">Home</a></li>
+            <li><a href="/admin/openRegistration" class="<% if( active == 'registrations'){%>active<%} else {%> <%}%>">Registrations</a></li>
+            <li><a href="/admin/allocation" class="<% if( active == 'allocation'){%>active<%} else {%> <%}%>">Allocations</a></li>
+            <li><a href="/admin/changeElective" class="<% if( active == 'change'){%>active<%} else {%> <%}%>">Change</a></li>
+            <li>
+                <form action="/admin/logout" method="POST"><button id="logout-btn">LogOut</button></form>
+            </li>
+        </ul>
+    </div>
+</header>

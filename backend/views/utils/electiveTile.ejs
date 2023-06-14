@@ -1,0 +1,40 @@
+<div class="card m-b-15px">
+    <div class="card-header myCard">
+        <div class="main-tile-flex">
+            <div class="tile-con-flex">
+                <input class="form-check-input" style="margin: 0; margin-right: 20px;" type="checkbox" value=""
+                    id="<%= course.courseCode %>">
+                <p class="m-0"><%= course.courseCode %>:</p>
+            </div>
+            <div class="empty" id="headingOne" data-toggle="collapse" data-target="#<%= target %>" aria-expanded="false"
+                aria-controls="<%= target %>"><%= course.courseName %></div>
+            <button class="btn bg-red collapsed" type="button" data-toggle="collapse" data-target="#<%= target %>"
+                aria-expanded="false" aria-controls="<%= target %>">
+                <i class="fa fa-angle-down"></i>
+        </div>
+    </div>
+    <div id="<%= target %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="hidden-content card-body">
+            <div class="hidden-content-row-1">
+                <p class="m-0"> <span class="badge alert-info"><%= course.courseType %>-Based Course</span></p>
+                <p class="m-0">Credits: <span class="badge alert-danger"><%= course.courseCredits %></span></p>
+            </div>
+            <h5 class="bold">Overview:</h5>
+            <p class="small">
+                <%= course.courseOverview %>
+            </p>
+            <h5 class="bold">Pre-Requisites:</h5>
+            <p>
+                <% for (let i = 0; i < course.coursePreRequisites.length; i++) { %>
+                    <%= course.coursePreRequisites[i] %><%= i !== course.coursePreRequisites.length - 1 ? ', ' : '' %>
+                <% } %>
+            </p>
+            <h5 class="bold">Course outcomes:</h5>
+            <ul class="small m-5pr">
+                <% for (let i = 0; i < course.courseOutcomes.length; i++) { %>
+                    <li><%= course.courseOutcomes[i] %></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,175 @@
+/* Style for the header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    display: block;
+    margin-right: 10px;
+}
+
+header ul li:last-child {
+    margin-right: 0;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+header ul li a:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Style for the main content */
+main {
+    margin: 50px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+main h2 {
+    margin-top: 0;
+}
+
+main ul {
+    list-style: none;
+    padding: 0;
+}
+
+main ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+main ul li:last-child {
+    margin-right: 0;
+}
+
+/* Style for the footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+#nav-toggle:checked+nav {
+    display: block;
+}
+
+#nav-toggle:checked~header,
+#nav-toggle:checked~footer {
+    background-color: #666;
+}
+
+/* Style for the button */
+#nav-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+/* Show/hide navigation */
+nav {
+    display: none;
+}
+
+nav.show-menu {
+    display: block;
+}
+
+/* Other styles remain the same */
+.con-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.con-card {
+    margin: 12px 10px;
+    background-color: rgba(20, 36, 64, .7);
+    border-radius: 10px;
+    color: white;
+    font-weight: 300;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card1 {
+    width: 35%;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 40vh;
+}
+
+.card2 {
+    width: 65%;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 75vh
+}
+
+
+#announcements {
+    width: 80%;
+    margin: auto;
+}
+
+.announce-tile {
+    background-color: rgba(255, 74, 68, .6);
+}
+
+.list-content {
+    width: 80%;
+    margin: auto;
+    border: none;
+}
+
+.dates {
+    width: 80%;
+    margin: auto;
+}
+
+.list-item {
+    text-align: start;
+}

@@ -1,0 +1,135 @@
+#center-flex {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    /* Set a height for the container */
+}
+
+.con-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    /* Occupy the full height of the container */
+}
+
+.con-card {
+    height: 70vh;
+    margin: 12px 10px;
+    background-color: rgba(20, 36, 64, 0.7);
+    border-radius: 10px;
+    color: white;
+    font-weight: 300;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card1 {
+    width: 40%;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 10px 0;
+}
+
+.card2 {
+    width: 60%;
+    padding: 10px 15px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.list-content {
+    width: 80%;
+    margin: auto;
+    color: black;
+}
+
+.form-title {
+    margin: 0;
+    margin-top: 15px;
+}
+
+#align-left {
+    text-align: left;
+}
+
+.black-text {
+    color: black;
+}
+
+.red-back {
+    background-color: #ff4a44;
+}
+
+.openBtn {
+    background-color: lightskyblue;
+    color: black;
+    margin-top: 20px;
+}
+
+
+.filter-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    margin: 20px 10px;
+}
+
+.filter-flex button {
+    align-self: center;
+    background-color: #ff4a44;
+    text-align: center;
+    padding: 10px 15px;
+}
+
+.card1-content {
+    overflow-y: scroll;
+}
+
+.proceedBtn {
+    background-color: rgb(32, 32, 134);
+    margin: 10px;
+    margin-bottom: 10px;
+}
+
+.proceedPlacement {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    margin: 10px 5px;
+}
+
+.filter-card {
+    background-color: rgb(96, 96, 96);
+    border-radius: 10px;
+    /* flex-grow: 1; */
+    margin: 0 10px;
+    padding: 10px 0;
+    width: 550px;
+}
+
+.filter-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.check-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.check-desc {
+    margin-top: 5px;
+    font-weight: 500;
+}
