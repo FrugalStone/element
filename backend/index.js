@@ -160,19 +160,22 @@ app.post('/forgotPassword', async (req, res) => {
   
   const args = [email, "Element password reset", link];
   
-  const pythonProcess = spawn('python', [pythonScript, ...args]);
+  const allowedScripts = ['./send_password_reset.py']; // Whitelist of allowed scripts
 
-  pythonProcess.stdout.on('data', (data) => {
-    console.log(`Python script output: ${data}`);
-  });
-  
-  pythonProcess.stderr.on('data', (data) => {
-    console.error(`Error executing Python script: ${data}`);
-  });
-  
-  pythonProcess.on('close', (code) => {
-    console.log(`Python script executed with code ${code}`);
-  });
+  if (allowedScripts.includes(pythonScript)) {
+    const pythonProcess = spawn('python', [pythonScript, ...args]);
+    pythonProcess.stdout.on('data', (data) => {
+      console.log(`Python script output: ${data}`);
+    });
+    
+    pythonProcess.stderr.on('data', (data) => {
+      console.error(`Error executing Python script: ${data}`);
+    });
+    
+    pythonProcess.on('close', (code) => {
+      console.log(`Python script executed with code ${code}`);
+    });
+  }
 
   res.render('login.ejs', { isWarned: true, warnignMessage: "Try loging in again after resetting password" });
 });
