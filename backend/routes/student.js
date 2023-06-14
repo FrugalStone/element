@@ -49,10 +49,10 @@ router.get('/dashboard', async (req, res) => {
         const announcements = await announcementModel.find();
         console.log(announcements[0].announcement);
 
-        var regis = await openRegistrationModel.find();
-        var modifiedObjects = [];
+        let regis = await openRegistrationModel.find();
+        let modifiedObjects = [];
         regis.forEach((obj) => {
-          var modifiedObj = {
+          let modifiedObj = {
             _id: obj._id,
             dept: obj.dept,
             sem: obj.sem,
@@ -78,7 +78,7 @@ router.get("/selectElective", async (req, res) => {
     const studentSem = req.session.student_sem;
     const registration = await openRegistrationModel.findOne({ dept: studentDept, sem: studentSem });
     const submission = await prioritySubmissionModel.findOne({ email: req.session.student_email, dept: studentDept, sem: studentSem });
-    const allregis = await openRegistrationModel.find();
+
 
 
     if( req.session.isAuth){
@@ -89,7 +89,7 @@ router.get("/selectElective", async (req, res) => {
             return;
         }
 
-        var serve;
+        let serve;
         if( registration ){
             const endDate = registration.endDate;
             if( currentDate <= endDate ){
@@ -125,11 +125,11 @@ router.post("/submitPriorities", async (req, res) => {
     // unpack the request body into 2 lists: courses and priorites
     const body = req.body;
 
-    var courses = body.map(function(item) {
+    let courses = body.map(function(item) {
         return item.courseCode;
     });
     
-    var priorities = body.map(function(item) {
+    let priorities = body.map(function(item) {
         return item.priority;
     });
 
@@ -201,12 +201,12 @@ router.get("/changeElective", async (req, res) => {
             return { ...course.toObject(), seatsLeft: seats ? seats.seatsLeft : course.seats };
         });
         
-        // console.log(availableCourses);
-        // console.log(seatsLeft);
-        // console.log(enrolledCourseCodes);
-        // console.log(unenrolledCourseCodes);
-        // console.log(enrolledCourses);
-        // console.log(unenrolledCoursesWithSeats);
+        
+        
+        
+        
+        
+        
         
         res.render("students/changeElective.ejs", {
             enrolledCourses: enrolledCourses,
