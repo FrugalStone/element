@@ -76,10 +76,10 @@ router.get("/openRegistration", async (req, res) => {
   if (req.session.isAdmin) {
     console.log("Serving Open registrations page");
 
-    var regis = await openRegistrationModel.find();
-    var modifiedObjects = [];
+    let regis = await openRegistrationModel.find();
+    let modifiedObjects = [];
     regis.forEach((obj) => {
-      var modifiedObj = {
+      let modifiedObj = {
         _id: obj._id,
         dept: obj.dept,
         sem: obj.sem,
