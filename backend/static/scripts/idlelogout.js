@@ -33,6 +33,11 @@ function resetIdleTime() {
 function logout() {
     console.log("Logging out due to inactivity");
     clearInterval(idleInterval);
-    fetch('/destroySession');
+    fetch('/destroySession')
+        .catch((error) => {
+            // Handle the error here
+            console.error('Error destroying session:', error);
+        });
+
     window.location.href = LOGOUT_URL;
 }
