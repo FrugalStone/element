@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const dotenv = require('dotenv');
-var nodemailer = require('nodemailer');
+let nodemailer = require('nodemailer');
 const db = require('./db');
 const MongoDBSession = require('connect-mongodb-session')(session);
 
@@ -130,7 +130,7 @@ app.post('/forgotPassword', async (req, res) => {
 
   const link = 'http://localhost:5002/resetPassword?email=' + email + '&token=' + str;
   
-  var mailOptions = {
+  let mailOptions = {
     from: 'mailvizzard@gmail.com',
     to: email,
     subject: 'Element password reset',
@@ -170,8 +170,8 @@ app.post('/forgotPassword', async (req, res) => {
 });
 
 app.get('/resetPassword', async (req, res) => {
-  // const { email, token } = req.query;
-  const email = req.query.email;
+  
+
   const token = req.query.token;
 
   const result = await PswdToken.findOne({ token: token });
@@ -182,7 +182,7 @@ app.get('/resetPassword', async (req, res) => {
   else {
     res.send("Something wrong occurred");
   }
-  // res.send("wtf is this?");
+
 });
 
 app.post('/resetPassword', async (req, res) => {
