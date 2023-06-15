@@ -39,9 +39,9 @@ describe('Testing the EJS template', function() {
     const cards = document.querySelectorAll('.card');
     expect(cards.length).to.equal(1); 
 
-    // const cardTitles = document.querySelectorAll('.card-title');
-    // expect(cardTitles[0].textContent).to.equal('Visualize');
-    // expect(cardTitles[1].textContent).to.equal('Graph');
+    
+    
+    
   });
 
   it('should render registration tiles correctly', function() {
