@@ -3,6 +3,7 @@ const session = require("express-session");
 const dotenv = require("dotenv");
 const db = require("../db");
 const MongoDBSession = require("connect-mongodb-session")(session);
+const path = require("path");
 
 dotenv.config({ path: "../.env" });
 
@@ -202,13 +203,6 @@ router.get("/changeElective", async (req, res) => {
             return { ...course.toObject(), seatsLeft: seats ? seats.seatsLeft : course.seats };
         });
         
-        
-        
-        
-        
-        
-        
-        
         res.render("students/changeElective.ejs", {
             enrolledCourses: enrolledCourses,
             unenrolledCourses: unenrolledCoursesWithSeats,
@@ -239,6 +233,21 @@ router.post("/changeElective", async (req, res) => {
     await changeElec.save();
 
     res.redirect("/student/changeElective");
+});
+
+
+router.get("/visualize", async (req, res) => { 
+
+    // const studentDept = req.session.student_dept;
+    // const studentSem = req.session.student_sem;
+
+    // const courses = await courseModel.find({ dept: studentDept, sem: studentSem });
+
+    // res.render('students/visuals.ejs', {
+    //     courses: courses
+    // });
+
+    res.sendFile(path.join(__dirname, '../static', 'visuals.html'));
 });
 
 module.exports = router;

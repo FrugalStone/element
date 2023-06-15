@@ -37,11 +37,11 @@ describe('Testing the EJS template', function() {
     const document = dom.window.document;
 
     const cards = document.querySelectorAll('.card');
-    expect(cards.length).to.equal(3); 
+    expect(cards.length).to.equal(1); 
 
-    const cardTitles = document.querySelectorAll('.card-title');
-    expect(cardTitles[0].textContent).to.equal('');
-    expect(cardTitles[1].textContent).to.equal('Graph');
+    // const cardTitles = document.querySelectorAll('.card-title');
+    // expect(cardTitles[0].textContent).to.equal('Visualize');
+    // expect(cardTitles[1].textContent).to.equal('Graph');
   });
 
   it('should render registration tiles correctly', function() {

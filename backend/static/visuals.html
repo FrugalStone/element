@@ -62,10 +62,10 @@
   <script>
     function showElectives(course) {
       var electives = {
-        'Course 1': ['Elective 1', 'Elective 2', 'Elective 3'],
-        'Course 2': ['Elective 4', 'Elective 5'],
-        'Course 3': ['Elective 6', 'Elective 7', 'Elective 8'],
-        'Course 4': ['Elective 9']
+        'intro': ['Deep Learning', 'Artificial Intelligence', 'Neural Network Analysis'],
+        'ds': ['Network Security', 'Cyber Security', 'Information Security'],
+        'DBMS': ['Net Centric Programming', 'Data Science', 'Software Engineering'],
+        'SE': ['Network Security', 'Cyber Security', 'Information Security'],
       };
 
       var electivesList = electives[course];
@@ -87,11 +87,11 @@
 
     function showDepartmentElectives(department) {
       var electives = {
-        'CSE': ['Elective 1', 'Elective 2', 'Elective 3'],
-        'ECE': ['Elective 4', 'Elective 5'],
-        'EEE': ['Elective 6', 'Elective 7', 'Elective 8'],
-        'Mech': ['Elective 9'],
-        'Civil': ['Elective 10', 'Elective 11']
+        'CSE': ['Net Centric Programming', 'Information Security', 'Digital Image Processing','Data Analytics','Cloud Computing'],
+        'ECE': ['Wireless Communication', 'VLSI Design', 'Digital Image Processing','Internet of Things','Machine Learning and Pattern Recognition'],
+        'EEE': ['Renewable Energy Systems','Power Electronics','Embedded Systems','Digital Signal Processing','Control Systems'],
+        'Mech': ['Robotics and Automation','Fine Element Analysis','Computational Fluid Dynamics ','Advanced Materials and Manufacturing','Renewable Energy Systems and Sustainability'],
+        'Civil': ['Transportation Engineering', 'Structural Analysis and Design','Environmental Engineering','Geotechnical Engineering','Construction Management']
       };
 
       var electivesList = electives[department];
@@ -113,10 +113,10 @@
 
     function showPrerequisiteCourses(course) {
       var prerequisites = {
-        'Course 1': ['Prerequisite 1', 'Prerequisite 2'],
-        'Course 2': ['Prerequisite 3'],
-        'Course 3': ['Prerequisite 4', 'Prerequisite 5', 'Prerequisite 6'],
-        'Course 4': ['Prerequisite 7', 'Prerequisite 8']
+        'intro': ['Deep Learning', 'Artificial Intelligence', 'Neural Network Analysis'],
+        'ds': ['Network Security', 'Cyber Security', 'Information Security'],
+        'DBMS': ['Net Centric Programming', 'Data Science', 'Software Engineering'],
+        'SE': ['Network Security', 'Cyber Security', 'Information Security'],
       };
 
       var prerequisitesList = prerequisites[course];
@@ -151,10 +151,10 @@
         <div class="content">
           <h2>Select a course:</h2>
           <ul class="list-group">
-            <li class="list-group-item"><a href="#" onclick="showElectives('Course 1'); showPrerequisiteCourses('Course 1')">Course 1</a></li>
-            <li class="list-group-item"><a href="#" onclick="showElectives('Course 2'); showPrerequisiteCourses('Course 2')">Course 2</a></li>
-            <li class="list-group-item"><a href="#" onclick="showElectives('Course 3'); showPrerequisiteCourses('Course 3')">Course 3</a></li>
-            <li class="list-group-item"><a href="#" onclick="showElectives('Course 4'); showPrerequisiteCourses('Course 4')">Course 4</a></li>
+            <li class="list-group-item"><a href="#" onclick="showElectives('intro'); showPrerequisiteCourses('intro'); return false;">Intro to Computer science</a></li>
+            <li class="list-group-item"><a href="#" onclick="showElectives('ds'); showPrerequisiteCourses('ds'); return false;">Data Structures and algorithm</a></li>
+            <li class="list-group-item"><a href="#" onclick="showElectives('DBMS'); showPrerequisiteCourses('DBMS'); return false;">Database Management system</a></li>
+            <li class="list-group-item"><a href="#" onclick="showElectives('SE'); showPrerequisiteCourses('SE'); return false;">Software engneering</a></li>
           </ul>
           <div id="electives"></div>
         </div>
